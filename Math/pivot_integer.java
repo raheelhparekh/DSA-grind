@@ -1,11 +1,11 @@
 package Math;
 /*
  * LeetCode Prob No. 2485 : Pivot integer
- * Link: https://leetcode.com/problems/find-the-middle-index-in-array/
+ * Link: https://leetcode.com/problems/find-the-pivot-integer/description/
  * Example : Input: n = 8
             Output: 6
             Explanation: 6 is the pivot integer since: 1 + 2 + 3 + 4 + 5 + 6 = 21
-                                                        6+7+8=21
+            6+7+8=21
 
     TC : 0(N^2)
     SC : 0(1)
