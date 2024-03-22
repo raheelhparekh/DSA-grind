@@ -13,13 +13,16 @@ package LinkedLists;
  */
 
 public class palindrom_linked_list {
+    // TC=O(n)
+    // SC=O(1)
     public boolean isPalindrome(ListNode head) {
-        if(head==null || head.next==null) return false;
+        if(head==null) return false;
+        if(head.next==null) return true; // Note: for particular test case with a single element in the linked list
 
         // Step1: Reach middle of the linked list
         ListNode slow=head;
         ListNode fast=head.next;
-        if(fast==null) return true;
+        
 
         while(fast!=null && fast.next!=null){
             slow=slow.next;
