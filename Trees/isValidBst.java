@@ -34,3 +34,32 @@ public class isValidBst {
     }
     
 }
+/*
+ * Recursive approach
+ * TC=O(n) and SC=O(h) where h is the height of the tree
+ * class Solution {
+    boolean isValid;
+    TreeNode prev = null;
+
+    public boolean isValidBST(TreeNode root) {
+
+        isValid = true;
+        inOrder(root);
+        return isValid;
+
+    }
+
+    private void inOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inOrder(root.left);
+        if (prev != null && prev.val >= root.val) {
+            isValid = false;
+            return;
+        }
+        prev=root;
+        inOrder(root.right);
+    }
+}
+ */
