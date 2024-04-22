@@ -58,3 +58,40 @@ public class symmetric_tree {
         return dfs(left.left,right.right) && dfs(left.right,right.left);
     }
  */
+/*
+
+    * Iterative approach using Queue
+        TC=O(n) and SC=O(n)
+        Approach: Using Queue
+        1. Add left and right child of root to the queue
+        2. Poll two nodes from the queue and compare their values
+        3. Add left child of left node and right child of right node to the queue
+        4. Add right child of left node and left child of right node to the queue
+        5. Repeat the process until queue is empty
+        6. If at any point, the values are not equal or one of the node is null, return false
+        7. If the queue is empty, return true
+
+  public boolean isSymmetric(TreeNode root) {
+
+        if(root==null) return true;
+        Queue<TreeNode> q=new LinkedList<>();
+        q.add(root.left);
+        q.add(root.right);
+        while(!q.isEmpty()){
+            TreeNode left=q.poll();
+            TreeNode right=q.poll();
+            if(left==null && right==null) continue;
+            if(left==null || right==null || left.val!=right.val){
+                return false;
+            }
+
+            q.add(left.left);
+            q.add(right.right);
+            q.add(left.right);
+            q.add(right.left);
+
+
+        }
+        return true;
+    }
+} */
