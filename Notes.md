@@ -1,6 +1,8 @@
 Character.isUpperCase(ch)  // to check for a character is upper case or not where ch=word.charAt(index)
 word.indexOf(c)            // directly gives us the index of the character c in the word
 
+Maths
+XOR of a number with itself = 0
 
 HashMap 
             // To store all values in hashMap
