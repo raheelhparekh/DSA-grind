@@ -1,20 +1,28 @@
 package Arrays;
 /*
- * Geeks for Geeks: Missing number in array
- * Link: https://www.geeksforgeeks.org/problems/missing-number-in-array1416/1?page=1&difficulty=Easy&sortBy=submissions
- * Given an array of size N-1 such that it only contains distinct integers in the range of 1 to N. Find the missing element.
-
-    Example 1:
-
-    Input:
-    N = 5
-    A[] = {1,2,3,5}
-    Output: 4
-
-    Logic: We know sum till n natural number is n * (n+1)/2. We can calculate the sum of the array and subtract it from the sum of n natural numbers to get the missing number.
-
+ * Leetcode: 268. Missing Number
+ * https://leetcode.com/problems/missing-number/
+ * TC: O(n)
+ * SC: O(1)
+ * Most Optimal Solution using XOR
  */
 public class missing_number {
+    public int missingNumber(int[] nums) {
+        int xor1 = 0;
+        int xor2 = 0;
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+            xor1 ^= nums[i]; // 3^0^1
+            xor2 ^= i; // 0^1^2
+        }
+
+        xor2 ^= n; // 0^1^2^3
+
+        return xor1 ^ xor2; // ans=2
+    }
+    /* 
+    Second Method: using math formula
     int missingNumber(int array[], int n) {
         // Your Code Here
         int sum=n*(n+1)/2;
@@ -26,5 +34,6 @@ public class missing_number {
         return sum-count;
         
     }
+    */
     
 }
