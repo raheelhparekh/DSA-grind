@@ -1,5 +1,8 @@
 Character.isUpperCase(ch)  // to check for a character is upper case or not where ch=word.charAt(index)
 word.indexOf(c)            // directly gives us the index of the character c in the word
+s.split(" ")    // splits string when encounter a single white space
+s.split("\\s+") // splits string when encounter one or more white spaces
+s.trim()        // removes string before and after the word
 
 Maths
 XOR of a number with itself = 0
