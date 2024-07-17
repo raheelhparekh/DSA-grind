@@ -29,3 +29,8 @@ HashMap
                 int key = entry.getKey();
                 int value = entry.getValue();
             }
+
+
+Queue
+Queue.poll() --> gets you the current head of the queue
+Queue.size() --> gives you the size of the queue

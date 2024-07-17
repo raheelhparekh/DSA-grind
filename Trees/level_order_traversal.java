@@ -11,7 +11,14 @@ import java.util.Queue;
  * SC: O(N)
  * Striver's Approach
  * 
- * Approach: used queue to store the nodes at each level and then added the nodes to the list
+ * Approach: 
+ * Queue me root add kiya
+ * while queue is not empty
+ * we will remove the head of the queue. check if it has left and right child. If yes, add them to the queue.
+ * remove the head of the queue and add it to the answer list
+ * 
+ * we need to keep track of the level size. So, we will add a for loop to iterate over the level size.
+ * level size will be the size of the queue at the start of the loop.
  */
 
 
