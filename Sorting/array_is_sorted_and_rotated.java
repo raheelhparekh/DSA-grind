@@ -33,11 +33,25 @@ public class array_is_sorted_and_rotated {
         int count=0;
 
         for(int i=1;i<nums.length;i++){
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7411788632bcaee75680e3c0930f9d6bd81a86de
             if(nums[i-1]>nums[i]){
                 count++;
             }
         }
         if(nums[0]<nums[nums.length-1]){
+<<<<<<< HEAD
+=======
+=======
+            if(nums[i-1]>=nums[i]){
+                count++;
+            }
+        }
+        if(nums[0]<=nums[nums.length-1]){
+>>>>>>> fe79eb71e0bd5150fa983f5eda137d57fb781c72
+>>>>>>> 7411788632bcaee75680e3c0930f9d6bd81a86de
             count++;
         }
         return count<=1;
