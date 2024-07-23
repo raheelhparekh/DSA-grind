@@ -1,41 +1,36 @@
 package Arrays;
 /*
- * GFG: https://practice.geeksforgeeks.org/problems/rotate-array-by-n-elements-1587115621/1
- * Geek for Geeks: Rotate Array
- * Given an unsorted array arr[] of size N, rotate it by D elements (clockwise).
- * 
- * Example 1: 
- * Input: N = 5, D = 2
- * arr[] = {1,2,3,4,5}
- * Output: 3 4 5 1 2
- * 
- * Catch is We have to do it in 0(1) space and O(n) time.
- * 
- * Did not get the trick to solve this problem.
- * 
- * Approach: We can reverse the array in 3 steps:
- * We do d=d%n because if d>n then we can rotate the array by d%n times. CATCH
- * 1. Reverse the first d elements
- * 2. Reverse the next n-d elements
- * 3. Reverse the whole array
- * 
+    Leetcode: 189. Rotate Array
+    Link: https://leetcode.com/problems/rotate-array/
+    TC: O(n)
+    SC: O(1)
+
+    Example: 
+    Input: nums = [1,2,3,4,5,6,7], k = 3
+    Output: [5,6,7,1,2,3,4]
+    Explanation:
+    rotate 1 steps to the right: [7,1,2,3,4,5,6]
+    rotate 2 steps to the right: [6,7,1,2,3,4,5]
+    rotate 3 steps to the right: [5,6,7,1,2,3,4]
  */
 
 public class rotate_array {
-    static void rotateArr(int arr[], int d, int n)
-    {
-        // add your code here
-        d=d%n;
-        reverseArray(arr,0,d-1);
-        reverseArray(arr,d,n-1);
-        reverseArray(arr,0,n-1);
-        
+    public void rotate(int[] nums, int k) {
+        int n=nums.length;
+        k = k % n; //  V IMPPP: In case k is greater than the length of the array
+        // Because rotating an array of size 3 by 3 times will bring it to same array
+
+        reverse(nums, 0, n - 1);   // Reverse the entire array
+        reverse(nums, 0, k - 1);   // Reverse the first k elements
+        reverse(nums, k, n - 1);         // Reverse the rest of the array
     }
-    static void reverseArray(int arr[],int start,int end){
+
+    private void reverse(int nums[],int start,int end){
+
         while(start<end){
-            int temp=arr[start];
-            arr[start]=arr[end];
-            arr[end]=temp;
+            int temp=nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
             start++;
             end--;
         }
