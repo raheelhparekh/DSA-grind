@@ -33,11 +33,19 @@ package Sorting;
             int count=0;
     
             for(int i=1;i<nums.length;i++){
+<<<<<<< HEAD
                 if(nums[i-1]>nums[i]){
                     count++;
                 }
             }
             if(nums[0]<nums[nums.length-1]){
+=======
+                if(nums[i-1]>=nums[i]){
+                    count++;
+                }
+            }
+            if(nums[0]<=nums[nums.length-1]){
+>>>>>>> e6c1529ac747e786d8cd49ad7177997d8c22f090
                 count++;
             }
             return count<=1;
