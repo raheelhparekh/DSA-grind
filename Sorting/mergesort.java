@@ -6,52 +6,68 @@ package Sorting;
  * SC: O(n)
  */
 
+import java.util.ArrayList;
+
 public class mergesort {
-    public int[] sortArray(int[] nums) {
-        mergeSort(nums, 0, nums.length - 1);
-        return nums;
+    public static void main(String args[]) {
+        int n = 7;
+        int arr[] = { 9, 4, 7, 6, 3, 1, 5 };
+        System.out.println("Before sorting array: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        mergeSort(arr, 0, n - 1);
+        System.out.println("After sorting array: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 
-    private void mergeSort(int[] nums, int left, int right) {
-        if (left >= right) return;
+    public static void mergeSort(int[] nums, int low, int high) {
+        if (low >= high) return;
 
-        int mid = left + (right - left) / 2;
+        int mid = low + (high - low) / 2;
 
-        mergeSort(nums, left, mid);
-        mergeSort(nums, mid + 1, right);
+        mergeSort(nums, low, mid);
+        mergeSort(nums, mid + 1, high);
 
-        merge(nums, left, mid, right);
+        merge(nums, low, mid, high);
     }
 
-    private void merge(int[] nums, int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+    public static void merge(int[] nums, int low, int mid, int high) {
+        ArrayList<Integer> temp=new ArrayList<>();
+        int left=low;
+        int right=mid+1;
 
-        int[] leftArray = new int[n1];
-        int[] rightArray = new int[n2];
-
-        for (int i = 0; i < n1; ++i)
-            leftArray[i] = nums[left + i];
-        for (int i = 0; i < n2; ++i)
-            rightArray[i] = nums[mid + 1 + i];
-
-        int i = 0, j = 0, k = left;
-
-        while (i < n1 && j < n2) {
-            if (leftArray[i] <= rightArray[j]) {
-                nums[k++] = leftArray[i++];
-            } else {
-                nums[k++] = rightArray[j++];
+        while(left<=mid && right<=high){
+            if(nums[left]<=nums[right]){
+                temp.add(nums[left]);
+                left++;
+            }
+            else{
+                temp.add(nums[right]);
+                right++;
             }
         }
 
-        while (i < n1) {
-            nums[k++] = leftArray[i++];
+        while (left <= mid) {
+            temp.add(nums[left]);
+            left++;
         }
 
-        while (j < n2) {
-            nums[k++] = rightArray[j++];
+        //  if elements on the right half are still left //
+        while (right <= high) {
+            temp.add(nums[right]);
+            right++;
         }
+
+        // transfering all elements from temporary to arr //
+        for (int i = low; i <= high; i++) {
+            nums[i] = temp.get(i - low);
+        }
+
     }
     
 }
