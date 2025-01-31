@@ -34,3 +34,13 @@ HashMap
 Queue
 Queue.poll() --> gets you the current head of the queue
 Queue.size() --> gives you the size of the queue
+
+
+SUBSEQUENCE PROBLEMS
+1) Print all subsequences
+2) Print first subsequence
+3) Count all subsequences 
+
+Recursion Array Strategies 
+1) Pick/ dont pick strategy
+2) Looping from i=index --> n-1
