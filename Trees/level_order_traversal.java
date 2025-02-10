@@ -52,3 +52,30 @@ public class level_order_traversal {
         
     }
 }
+
+/*
+ * public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        Queue<TreeNode> q = new LinkedList<>();
+
+        if (root == null) return ans;
+        q.add(root);
+        while (!q.isEmpty()) {
+
+            List<Integer> ds = new ArrayList<>();
+
+            int size = q.size();
+            for (int i = 1; i <= size; i++) {
+
+                if (q.peek().left != null) q.add(q.peek().left);
+                if (q.peek().right != null) q.add(q.peek().right);
+
+                int valueRemovedFromQueue = q.poll().val;
+                ds.add(valueRemovedFromQueue);
+            }
+
+            ans.add(ds);
+        }
+        return ans;
+    }
+ */
