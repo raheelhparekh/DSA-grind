@@ -37,3 +37,35 @@ class MinElement_RotatedSortedArray {
 
     }
 }
+
+// Pattern: find the sorted half and perform ur tasks accordingly
+
+/*
+ * public int findMin(int[] nums) {
+        int low = 0;
+        int high = nums.length - 1;
+        int min = Integer.MAX_VALUE;
+        if (nums[low] <= nums[high]) {
+            return nums[low];
+        }
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (nums[low] <= nums[high]) {
+                min=Math.min(min,nums[low]);
+                break;
+            }
+            // left side is sorted
+            if (nums[low] <= nums[mid]) {
+                min = Math.min(min, nums[low]);
+                low = mid + 1;
+            }
+            // RIGHT SIDE IS SORTED
+            else {
+                min = Math.min(min, nums[mid]);
+                high = mid - 1;
+            }
+        }
+        return min;
+    }
+ */
