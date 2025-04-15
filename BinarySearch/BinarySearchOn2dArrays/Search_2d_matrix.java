@@ -1,4 +1,4 @@
-package BinarySearch;
+package BinarySearch.BinarySearchOn2dArrays;
 // Leetcode problem: 74. Search a 2D Matrix
 // Link: https://leetcode.com/problems/search-a-2d-matrix/
 // Idea: Binary Search
@@ -6,7 +6,11 @@ package BinarySearch;
 // Time Complexity: O(log(m*n))
 // Space Complexity: O(1)
 
-/* Approach: Consider the 2D matrix as a 1D array and apply binary search on it.Use the formula to find the row and column of the mid element. used the divide and mod operator to find the row and column of the mid element.
+/* Approach: Consider the 2D matrix as a 1D array in head
+ high=n*m-1
+ formula to convert mid to 2d coordinates
+ row=mid/n
+  column=mid%n
 */
 
 
