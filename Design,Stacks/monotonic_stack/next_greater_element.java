@@ -1,3 +1,4 @@
+package monotonic_stack;
 import java.util.Stack;
 /*
  * Leet Problem 496. Next Greater Element I
